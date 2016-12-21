@@ -1,4 +1,4 @@
-<?php namespace Devfactory\Taxonomy\Composers;
+<?php namespace MatoMoravcik\Taxonomy\Composers;
 
 use Config;
 

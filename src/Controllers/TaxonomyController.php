@@ -1,4 +1,4 @@
-<?php namespace Devfactory\Taxonomy\Controllers;
+<?php namespace MatoMoravcik\Taxonomy\Controllers;
 
 use Illuminate\Http\Request;
 
@@ -13,9 +13,9 @@ use Validator;
 use View;
 use Helpers;
 
-use Devfactory\Taxonomy\Models\Vocabulary;
-use Devfactory\Taxonomy\Models\Term;
-use Devfactory\Taxonomy\Models\TermRelation;
+use MatoMoravcik\Taxonomy\Models\Vocabulary;
+use MatoMoravcik\Taxonomy\Models\Term;
+use MatoMoravcik\Taxonomy\Models\TermRelation;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -67,7 +67,7 @@ class TaxonomyController extends BaseController {
 
     Vocabulary::create(Input::only('name'));
 
-    return Redirect::to(action('\Devfactory\Taxonomy\Controllers\TaxonomyController@getIndex'))->with('success', 'Created');
+    return Redirect::to(action('\MatoMoravcik\Taxonomy\Controllers\TaxonomyController@getIndex'))->with('success', 'Created');
 
   }
 
@@ -99,7 +99,7 @@ class TaxonomyController extends BaseController {
     $vocabulary = $this->vocabulary->findOrFail($id);
     $vocabulary->update(Input::only('name'));
 
-    return Redirect::to(action('\Devfactory\Taxonomy\Controllers\TaxonomyController@getIndex'))->with('success', 'Updated');
+    return Redirect::to(action('\MatoMoravcik\Taxonomy\Controllers\TaxonomyController@getIndex'))->with('success', 'Updated');
 
   }
 

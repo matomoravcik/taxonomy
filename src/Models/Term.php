@@ -1,4 +1,4 @@
-<?php namespace Devfactory\Taxonomy\Models;
+<?php namespace MatoMoravcik\Taxonomy\Models;
 
 class Term extends \Eloquent {
 
@@ -14,19 +14,19 @@ class Term extends \Eloquent {
   ];
 
   public function termRelation() {
-    return $this->morphMany('Devfactory\Taxonomy\Models\TermRelation', 'relationable');
+    return $this->morphMany('MatoMoravcik\Taxonomy\Models\TermRelation', 'relationable');
   }
 
 	public function vocabulary() {
-		return $this->belongsTo('Devfactory\Taxonomy\Models\Vocabulary');
+		return $this->belongsTo('MatoMoravcik\Taxonomy\Models\Vocabulary');
 	}
 
   public function childrens() {
-    return $this->hasMany('Devfactory\Taxonomy\Models\Term', 'parent', 'id')
+    return $this->hasMany('MatoMoravcik\Taxonomy\Models\Term', 'parent', 'id')
       ->orderBy('weight', 'ASC');
   }
 
   public function parentTerm() {
-    return $this->hasOne('Devfactory\Taxonomy\Models\Term', 'id', 'parent');
+    return $this->hasOne('MatoMoravcik\Taxonomy\Models\Term', 'id', 'parent');
   }
 }

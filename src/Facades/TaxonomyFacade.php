@@ -1,4 +1,4 @@
-<?php namespace Devfactory\Taxonomy\Facades;
+<?php namespace MatoMoravcik\Taxonomy\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
