@@ -7,6 +7,7 @@ class Term extends \Eloquent {
     'vocabulary_id',
     'parent',
     'weight',
+    'children' // not in db only auxiliary attribute to hold children in terms tree view
   ];
 
 	public static $rules = [
