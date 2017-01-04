@@ -5,6 +5,7 @@ class Vocabulary extends \Eloquent
 
 	protected $fillable = [
 		'name',
+		'key',
 	];
 
 	protected $table = 'vocabularies';

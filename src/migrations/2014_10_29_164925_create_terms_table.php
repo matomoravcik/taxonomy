@@ -2,7 +2,8 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTermsTable extends Migration {
+class CreateTermsTable extends Migration
+{
 
 	/**
 	 * Run the migrations.
@@ -11,13 +12,14 @@ class CreateTermsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('terms', function($table) {
+		Schema::create('terms', function ($table) {
 			$table->increments('id');
 			$table->integer('vocabulary_id')->unsigned();
 			$table->foreign('vocabulary_id')->references('id')->on('vocabularies')->onDelete('cascade');
 			$table->string('name');
-      $table->integer('parent')->unsigned();
-      $table->integer('weight');
+			$table->string('key');
+			$table->integer('parent')->unsigned();
+			$table->integer('weight');
 			$table->timestamps();
 		});
 	}

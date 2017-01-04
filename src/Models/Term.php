@@ -3,6 +3,7 @@
 class Term extends \Eloquent {
 
   protected $fillable = [
+    'key',
     'name',
     'vocabulary_id',
     'parent',
@@ -11,6 +12,7 @@ class Term extends \Eloquent {
   ];
 
 	public static $rules = [
+		'key' => 'required',
 		'name' => 'required'
   ];
 
