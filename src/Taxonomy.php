@@ -121,7 +121,7 @@ class Taxonomy
 			return [];
 		}
 
-		$parents = $this->term->whereParent(0)->whereVocabularyId($vocabulary->id)->orderBy('weight', 'ASC')->get();
+		$parents = $this->term->whereParent(null)->whereVocabularyId($vocabulary->id)->orderBy('weight', 'ASC')->get();
 
 		$options = [];
 		foreach ( $parents as $parent ) {
@@ -210,7 +210,7 @@ class Taxonomy
 	 *
 	 * @thrown Illuminate\Database\Eloquent\ModelNotFoundException
 	 */
-	public function createTerm($vid, $name, $key = null, $parent = 0, $weight = 0)
+	public function createTerm($vid, $name, $key = null, $parent = null, $weight = 0)
 	{
 		$vocabulary = $this->vocabulary->findOrFail($vid);
 

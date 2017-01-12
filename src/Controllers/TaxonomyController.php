@@ -147,7 +147,7 @@ class TaxonomyController extends BaseController {
     foreach ($content as $parent_key => $parent){
       $parent_term = Term::find($parent->id);
 
-      $parent_term->parent = 0;
+      $parent_term->parent = null;
       $parent_term->weight = $parent_key;
       $parent_term->save();
 

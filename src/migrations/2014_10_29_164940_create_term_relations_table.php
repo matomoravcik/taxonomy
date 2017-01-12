@@ -16,9 +16,9 @@ class CreateTermRelationsTable extends Migration {
 			$table->integer('relationable_id')->unsigned();
 			$table->string('relationable_type');
 			$table->integer('term_id')->unsigned();
-			$table->foreign('term_id')->references('id')->on('terms');
+			$table->foreign('term_id')->references('id')->on('terms')->onDelete('cascade');
 			$table->integer('vocabulary_id')->unsigned();
-			$table->foreign('vocabulary_id')->references('id')->on('vocabularies');
+			$table->foreign('vocabulary_id')->references('id')->on('vocabularies')->onDelete('cascade');
 			$table->timestamps();
 		});
 	}

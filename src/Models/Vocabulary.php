@@ -32,7 +32,7 @@ class Vocabulary extends \Eloquent
 	 *
 	 * @return array
 	 */
-	public function buildTree(&$elements = null, $parentId = 0)
+	public function buildTree(&$elements = null, $parentId = null)
 	{
 		if ( $elements === null ) {
 			$elements = $this->terms;
