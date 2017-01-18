@@ -24,6 +24,11 @@ class Vocabulary extends \Eloquent
 		return $this->HasMany('MatoMoravcik\Taxonomy\Models\TermRelation');
 	}
 
+	public static function getIdIdByKey($key)
+	{
+		return self::where('key', '=', $key)->pluck('id')->first();
+	}
+
 	/**
 	 * Function converts vocabulary terms to tree
 	 *
