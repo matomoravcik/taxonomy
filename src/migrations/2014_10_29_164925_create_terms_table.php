@@ -22,6 +22,8 @@ class CreateTermsTable extends Migration
 			$table->integer('weight');
 			$table->timestamps();
 
+			$table->unique(['vocabulary_id', 'key']);
+
 			// indexes
 			$table->index('parent');
 

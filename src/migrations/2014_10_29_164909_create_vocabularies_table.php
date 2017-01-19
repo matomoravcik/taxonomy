@@ -16,6 +16,9 @@ class CreateVocabulariesTable extends Migration {
 			$table->string('name');
 			$table->string('key');
 			$table->timestamps();
+
+			$table->unique('name');
+			$table->unique('key');
 		});
 	}
 
