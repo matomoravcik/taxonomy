@@ -97,6 +97,20 @@ trait TaxonomyTrait
 	}
 
 	/**
+	 * Function returns info if some entity has all terms from inserted vocabulary
+	 * 
+	 * @param $vocabularyId
+	 * @param $termsCount
+	 *
+	 * @return bool
+	 */
+	public function hasAllVocabularyTerms($vocabularyId, $termsCount)
+	{
+		$vocabularyTermsCount = Term::whereVocabularyId($vocabularyId)->count();
+		return $termsCount == $vocabularyTermsCount;
+	}
+
+	/**
 	 * Get all the terms for a given vocabulary that are linked to the current
 	 * Model.
 	 *
